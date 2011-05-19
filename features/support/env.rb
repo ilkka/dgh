@@ -12,11 +12,8 @@ Spork.prefork do
   end
 
   require 'rspec/expectations'
-
-  $LOAD_PATH.unshift(File.dirname(__FILE__) + '/../../lib')
 end
 
 Spork.each_run do
-  require 'dgh'
 end
 
