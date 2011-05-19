@@ -1,1 +1,1 @@
-default: --format pretty --color --drb
+default: --format pretty --color --drb --port 8990
