@@ -1,0 +1,60 @@
+# Treetop grammar for apt-cache policy output
+grammar Policy
+  rule package_entry
+    package_name ":\n"
+    "  " installed "\n"
+    "  " candidate "\n"
+    version_table
+  end
+
+  rule package_name
+    [a-z] ([a-z0-9] / "_" / "-" / ".")+
+  end
+
+  rule installed
+    "Installed: " version
+  end
+
+  rule candidate
+    "Candidate: " version
+  end
+
+  rule version
+    ([0-9] ":")? [0-9] .*
+  end
+
+  rule version_table
+    "  Version table:\n"
+    (version_table_entry "\n")+
+  end
+
+  rule version_table_entry
+    (" *** " / "     ") version " " [0-9]+ "\n"
+    " "+ priority (status_file / apt_source)
+  end
+
+  rule priority
+    [0-9]+
+  end
+
+  rule status_file
+    "/var/lib/dpkg/status"
+  end
+
+  rule apt_source
+    url section arch "Packages"
+  end
+
+  rule url
+    [a-z]+ "://" [a-zA-Z0-9._-/]+
+  end
+
+  rule section
+    [a-z]+ "/" [a-z]+
+  end
+
+  rule arch
+    [a-zA-Z0-9]+
+  end
+end
+# vim: filetype=ruby
