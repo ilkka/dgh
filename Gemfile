@@ -1,5 +1,8 @@
 source "http://rubygems.org"
 
+gem 'polyglot'
+gem 'treetop'
+
 group :development do
   gem "rspec", "~> 2.5.0"
   gem "yard", "~> 0.6.0"
