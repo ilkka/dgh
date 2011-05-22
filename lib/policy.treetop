@@ -50,7 +50,7 @@ grammar Policy
   end
 
   rule section
-    [a-z]+ "/" [a-z]+
+    [a-z-]+ "/" [a-z-]+
   end
 
   rule arch
