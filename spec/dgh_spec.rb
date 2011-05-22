@@ -63,6 +63,7 @@ describe Dgh do
     it 'finds downgradable packages in parse results' do
       result = Dgh.find_downgradable(Dgh.parse(PolicyOutputWithDowngradable).content)
       result.length.should == 1
+      result[0][:name].should == "avahi-autoipd"
     end
   end
 end
