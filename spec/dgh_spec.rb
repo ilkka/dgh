@@ -51,6 +51,11 @@ describe Dgh do
       result[0][:installed_version].should == '0.6.30-3ubuntu1~natty1'
       result[0][:candidate_version].should == '0.6.30-3ubuntu1~natty1'
       result[0][:versions].length.should == 2
+      result[0][:versions][0][:version].should == '0.6.30-3ubuntu1~natty1'
+      result[0][:versions][0][:current].should == true
+      result[0][:versions][0][:sources].length.should == 1
+      result[0][:versions][0][:sources][0][:priority].should == 100
+      result[0][:versions][0][:sources][0][:source].should == '/var/lib/dpkg/status'
     end
   end
 end
