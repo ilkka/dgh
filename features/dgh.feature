@@ -1,9 +1,9 @@
-Feature: something something
-  In order to something something
-  A user something something
-  something something something
+Feature: report downgrade candidates
+  In order to fix my computer
+  As an administrator
+  I want to get a list of packages I need to downgrade
 
-  Scenario: something something
-    Given inspiration
-    When I create a sweet new gem
-    Then everyone should see how awesome I am
+  Scenario: no downgradable packages
+    Given that there are no downgradable packages
+    When I run dgh
+    Then no packages should be reported as downgrade candidates

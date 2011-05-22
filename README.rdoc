@@ -1,13 +1,41 @@
-= dgh
+= dgh -- the Debian/Ubuntu downgrade helper
 
-Description goes here.
+Ever installed a bunch of stuff from a lovely PPA or other repository, only to
+find that you managed to break your entire system? And then when you want to go
+back to the way things were before, you have to find out which packages got
+installed or upgraded and downgrade them manually, and hope you caught them
+all?
+
+Dgh can't solve the whole problem, but it will help you. What it does is scan
+the installed and available versions of all packages, and report packages that
+have an installed version that is higher than the version in any repository.
+That way you can downgrade by first removing the offending repository, then
+updating your package cache, then running dgh and manually downgrading the
+packages it reports.
+
+Note that it can't know which repository a package originally came from, so if
+you are running some homebrew packages that are meant to override versions from
+repositories, dgh will report them too.
+
+== Usage ==
+
+Create a file with the policy output for your installed packages:
+
+    $ dpkg --get-selections|egrep '\binstall'|awk '{print $1}'| \
+      xargs env LANG=C apt-cache policy|tee packages.list
+
+Run dgh on the file:
+
+    $ dgh packages.list
+
+The output should be the list of packages you might want to downgrade.
 
 == Contributing to dgh
  
-* Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
+* Check out the develop branch to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
 * Fork the project
-* Start a feature/bugfix branch
+* Start a feature/bugfix branch off of the develop branch
 * Commit and push until you are happy with your contribution
 * Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
 * Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
