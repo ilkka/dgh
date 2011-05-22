@@ -69,9 +69,9 @@ module Policy
   module PackageEntry1
     def content
       {
-        :name => elements[0],
-        :installed_version => elements[3],
-        :candidate_version => elements[6],
+        :name => elements[0].content,
+        :installed_version => elements[3].content,
+        :candidate_version => elements[6].content,
         :versions => elements[8].content
       }
     end
@@ -824,7 +824,7 @@ module Policy
 
   module Priority0
     def content
-      text_value
+      text_value.to_i
     end
   end
 
