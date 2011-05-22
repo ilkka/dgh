@@ -1,6 +1,5 @@
 source "http://rubygems.org"
 
-gem 'polyglot'
 gem 'treetop'
 
 group :development do
