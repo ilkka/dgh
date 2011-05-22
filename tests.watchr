@@ -50,21 +50,23 @@ end
 # Notify of success.
 #
 def notify_success
-  if have_notify_send?
-    notify success_icon_name, "All green!", "Now write more tests :)"
-  elsif have_growl?
-    Growl.notify_ok "All green!"
-  end
+  puts "Success"
+  #if have_notify_send?
+    #notify success_icon_name, "All green!", "Now write more tests :)"
+  #elsif have_growl?
+    #Growl.notify_ok "All green!"
+  #end
 end
 
 # Notify of failure.
 #
 def notify_failure
-  if have_notify_send?
-    notify error_icon_name, "Something is broken", "Now go fix it :)"
-  elsif have_growl?
-    Growl.notify_error "Something is broken"
-  end
+  puts "Failure"
+  #if have_notify_send?
+    #notify error_icon_name, "Something is broken", "Now go fix it :)"
+  #elsif have_growl?
+    #Growl.notify_error "Something is broken"
+  #end
 end
 
 # Run a single ruby command. Notify appropriately.
