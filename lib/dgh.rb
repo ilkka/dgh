@@ -26,10 +26,18 @@ module Dgh
 
   class << self
     def run
-      ARGV.each do |f|
-        puts "Parsing #{f}:"
-        find_downgradable(parse(File.open(f).read).content).each do |pkg|
-          puts "  " + pkg[:name]
+      if ARGV.empty? || ARGV.any? {|a| !File.exist? a}
+        puts "dgh, the Debian/Ubuntu Downgrade Helper"
+        puts "Usage: dgh <apt-cache policy listing>"
+        puts "You can generate a policy listing by running e.g."
+        puts "`dpkg --get-selections|egrep '\binstall'|awk '{print $1}'|\\"
+        puts "  xargs env LANG=C apt-cache policy`"
+      else
+        ARGV.each do |f|
+          puts "Parsing #{f}:"
+          find_downgradable(parse(File.open(f).read).content).each do |pkg|
+            puts "  " + pkg[:name]
+          end
         end
       end
     end
