@@ -65,5 +65,10 @@ describe Dgh do
       result.length.should == 1
       result[0][:name].should == "avahi-autoipd"
     end
+
+    it "doesn't find downgradables where there aren't any" do
+      result = Dgh.find_downgradable(Dgh.parse(PolicyOutputWithoutDowngradable).content)
+      result.length.should == 0
+    end
   end
 end
