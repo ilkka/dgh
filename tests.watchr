@@ -34,7 +34,7 @@ end
 watch('^spec/.+_spec\.rb$') { |md| spec md[0] }
 watch('^lib/.+\.rb$') { |md| spec "spec/#{File.basename(md[0]).gsub(/\..*?$/, '')}_spec.rb" }
 watch('^features/.+\.feature$') { |md| feature md[0] }
-watch('^lib/.+\.treetop$') { |md| system("tt #{md[0]}") }
+watch('^lib/.+\.treetop$') { |md| treetop md[0] }
 
 # Notify using notify-send.
 #
@@ -100,6 +100,13 @@ end
 # @param featurefile [String] path to feature file.
 def feature(featurefile)
   run(%Q(cucumber #{cucumber_opts} #{featurefile}))
+end
+
+# Compile a treetop grammar
+#
+# @param grammarfile [String] path to grammar file
+def treetop(grammarfile)
+  run(%Q(tt #{grammarfile}))
 end
 
 # Options for rspec run
