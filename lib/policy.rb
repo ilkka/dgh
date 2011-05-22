@@ -404,11 +404,14 @@ module Policy
   end
 
   module VersionTable0
+    def version_table_entries
+      elements[1]
+    end
   end
 
   module VersionTable1
     def content
-      elements[1..-1].map {|e| e.content}
+      elements[1].content
     end
   end
 
@@ -433,21 +436,7 @@ module Policy
     end
     s0 << r1
     if r1
-      s2, i2 = [], index
-      loop do
-        r3 = _nt_version_table_entry
-        if r3
-          s2 << r3
-        else
-          break
-        end
-      end
-      if s2.empty?
-        @index = i2
-        r2 = nil
-      else
-        r2 = instantiate_node(SyntaxNode,input, i2...index, s2)
-      end
+      r2 = _nt_version_table_entries
       s0 << r2
     end
     if s0.last
@@ -460,6 +449,45 @@ module Policy
     end
 
     node_cache[:version_table][start_index] = r0
+
+    r0
+  end
+
+  module VersionTableEntries0
+    def content
+      elements.map {|e| e.content}
+    end
+  end
+
+  def _nt_version_table_entries
+    start_index = index
+    if node_cache[:version_table_entries].has_key?(index)
+      cached = node_cache[:version_table_entries][index]
+      if cached
+        cached = SyntaxNode.new(input, index...(index + 1)) if cached == true
+        @index = cached.interval.end
+      end
+      return cached
+    end
+
+    s0, i0 = [], index
+    loop do
+      r1 = _nt_version_table_entry
+      if r1
+        s0 << r1
+      else
+        break
+      end
+    end
+    if s0.empty?
+      @index = i0
+      r0 = nil
+    else
+      r0 = instantiate_node(SyntaxNode,input, i0...index, s0)
+      r0.extend(VersionTableEntries0)
+    end
+
+    node_cache[:version_table_entries][start_index] = r0
 
     r0
   end
