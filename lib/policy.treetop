@@ -12,7 +12,7 @@ grammar Policy
   end
 
   rule package_name
-    [a-z0-9_.-]+
+    [a-z0-9_.+-]+
   end
 
   rule installed
