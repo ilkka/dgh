@@ -48,6 +48,8 @@ describe Dgh do
       result = Dgh.parse(PolicyOutputWithDowngradable).content
       result.length.should == 2
       result[0][:name].should == 'avahi-autoipd'
+      result[0][:installed_version].should == '0.6.30-3ubuntu1~natty1'
+      result[0][:candidate_version].should == '0.6.30-3ubuntu1~natty1'
     end
   end
 end
