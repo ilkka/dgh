@@ -17,6 +17,19 @@ Note that it can't know which repository a package originally came from, so if
 you are running some homebrew packages that are meant to override versions from
 repositories, dgh will report them too.
 
+== Usage ==
+
+Create a file with the policy output for your installed packages:
+
+    $ dpkg --get-selections|egrep '\binstall'|awk '{print $1}'| \
+      xargs env LANG=C apt-cache policy|tee packages.list
+
+Run dgh on the file:
+
+    $ dgh packages.list
+
+The output should be the list of packages you might want to downgrade.
+
 == Contributing to dgh
  
 * Check out the develop branch to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
