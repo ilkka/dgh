@@ -25,6 +25,11 @@ module Dgh
   end
 
   def run
-    ARGV.each {|f| File.exist?(f) && parse(File.open(f).read)}
+    ARGV.each do |f|
+      puts "Parsing #{f}:"
+      find_downgradable(parse(File.open(f).read)).each do |pkg|
+        puts "  " + pkg[:name]
+      end
+    end
   end
 end
