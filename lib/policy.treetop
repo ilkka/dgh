@@ -27,7 +27,7 @@ grammar Policy
   rule package_name
     [a-z0-9_.+-]+ {
       def content
-        text_value
+        elements.inject("") {|s,e| s << e.text_value}
       end
     }
   end

@@ -169,7 +169,7 @@ module Policy
 
   module PackageName0
     def content
-      text_value
+      elements.inject("") {|s,e| s << e.text_value}
     end
   end
 
