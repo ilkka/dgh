@@ -27,7 +27,7 @@ module Dgh
   def run
     ARGV.each do |f|
       puts "Parsing #{f}:"
-      find_downgradable(parse(File.open(f).read)).each do |pkg|
+      find_downgradable(parse(File.open(f).read).content).each do |pkg|
         puts "  " + pkg[:name]
       end
     end
