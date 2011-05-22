@@ -45,8 +45,9 @@ EOS
 describe Dgh do
   describe 'parser' do
     it 'parses apt-cache policy output' do
-      result = Dgh.parse PolicyOutputWithDowngradable
-      result.content.length.should == 2
+      result = Dgh.parse(PolicyOutputWithDowngradable).content
+      result.length.should == 2
+      result[0][:name].should == 'avahi-autoipd'
     end
   end
 end
