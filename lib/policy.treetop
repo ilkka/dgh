@@ -46,7 +46,7 @@ grammar Policy
   end
 
   rule url
-    [a-z]+ "://" [a-zA-Z0-9._-/]+
+    [a-z]+ "://" [a-zA-Z0-9._/-]+
   end
 
   rule section
