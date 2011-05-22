@@ -46,6 +46,7 @@ describe Dgh do
   describe 'parser' do
     it 'parses apt-cache policy output' do
       result = Dgh.parse PolicyOutputWithDowngradable
+      result.content.length.should == 2
     end
   end
 end
