@@ -1,5 +1,9 @@
 # Treetop grammar for apt-cache policy output
 grammar Policy
+  rule package_list
+    package_entry+
+  end
+
   rule package_entry
     package_name ":\n"
     "  " installed "\n"
