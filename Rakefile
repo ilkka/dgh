@@ -16,7 +16,7 @@ Jeweler::Tasks.new do |gem|
   gem.homepage = "http://github.com/ilkka/dgh"
   gem.license = "GPLv3"
   gem.summary = %Q{The Debian/Ubuntu Downgrade Helper}
-  gem.description = <<<EOS
+  gem.description = <<EOS
 Dgh helps when you have to manually downgrade a large amount of packages.
 It requires the user to generate a file with `apt-cache policy` output for all
 installed packages, which it then reads. It looks for packages that have a
