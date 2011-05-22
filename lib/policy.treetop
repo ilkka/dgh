@@ -1,70 +1,162 @@
 # Treetop grammar for apt-cache policy output
 grammar Policy
   rule package_list
-    package_entry+
+    package_entry+ {
+      def content
+        elements.map {|e| e.content}
+      end
+    }
   end
 
   rule package_entry
     package_name ":\n"
     "  " installed "\n"
     "  " candidate "\n"
-    version_table
+    version_table {
+      def content
+        {
+          :name => elements[0],
+          :installed_version => elements[3],
+          :candidate_version => elements[6],
+          :versions => elements[8].content
+        }
+      end
+    }
   end
 
   rule package_name
-    [a-z0-9_.+-]+
+    [a-z0-9_.+-]+ {
+      def content
+        text_value
+      end
+    }
   end
 
   rule installed
-    "Installed: " version
+    "Installed: " version {
+      def content
+        elements[1].content
+      end
+    }
   end
 
   rule candidate
-    "Candidate: " version
+    "Candidate: " version {
+      def content
+        elements[1].content
+      end
+    }
   end
 
   rule version
-    ([0-9] ":")? [a-zA-Z0-9_.~+-]+
+    ([0-9] ":")? [a-zA-Z0-9_.~+-]+ {
+      def content
+        text_value
+      end
+    }
   end
 
   rule version_table
-    "  Version table:\n"
-    (
-      (current_mark / "     ") version " " [0-9]+ "\n"
-      (priority_entry "\n")+
-    )+
+    "  Version table:\n" version_table_entry+ {
+      def content
+        elements[1..-1].map {|e| e.content}
+      end
+    }
+  end
+
+  rule version_table_entry
+    (current_mark / not_current_mark) version " " [0-9]+ "\n" source_lines {
+      def content
+        {
+          :version => elements[1].content,
+          :current => elements[0].content,
+          :sources => elements[5].content
+        }
+      end
+    }
   end
 
   rule current_mark
-    " *** "
+    " *** " {
+      def content
+        true
+      end
+    }
+  end
+  
+  rule not_current_mark
+    "     " {
+      def content
+        false
+      end
+    }
   end
 
-  rule priority_entry
-    " "+ priority " "+ (status_file / apt_source)
+  rule source_lines
+    source_line+ {
+      def content
+        elements.map {|e| e.content}
+      end
+    }
+  end
+
+  rule source_line
+    " "+ priority " "+ (status_file / apt_source) "\n" {
+      def content
+        {
+          :priority => elements[1].content,
+          :source => elements[3].content
+        }
+      end
+    }
   end
 
   rule priority
-    [0-9]+
+    [0-9]+ {
+      def content
+        text_value
+      end
+    }
   end
 
   rule status_file
-    "/var/lib/dpkg/status"
+    "/var/lib/dpkg/status" {
+      def content
+        text_value
+      end
+    }
   end
 
   rule apt_source
-    url " "+ (section " "+)? (arch " "+)? "Packages"
+    url " "+ (section " "+)? (arch " "+)? "Packages" {
+      def content
+        text_value
+      end
+    }
   end
 
   rule url
-    [a-z]+ "://" [^ ]+
+    [a-z]+ "://" [^ ]+ {
+      def content
+        text_value
+      end
+    }
   end
 
   rule section
-    [a-z-]+ "/" [a-z-]+
+    [a-z-]+ "/" [a-z-]+ {
+      def content
+        text_value
+      end
+    }
   end
 
   rule arch
-    [a-zA-Z0-9]+
+    [a-zA-Z0-9]+ {
+      def content
+        text_value
+      end
+    }
   end
 end
 # vim: filetype=ruby
