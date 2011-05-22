@@ -3,7 +3,7 @@ grammar Policy
   rule package_list
     package_entry+ {
       def content
-        elements.map {|e| e.content}
+        elements.map {|e| e.content}
       end
     }
   end
@@ -59,7 +59,7 @@ grammar Policy
   rule version_table
     "  Version table:\n" version_table_entry+ {
       def content
-        elements[1..-1].map {|e| e.content}
+        elements[1..-1].map {|e| e.content}
       end
     }
   end
