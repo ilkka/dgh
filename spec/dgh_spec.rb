@@ -50,6 +50,7 @@ describe Dgh do
       result[0][:name].should == 'avahi-autoipd'
       result[0][:installed_version].should == '0.6.30-3ubuntu1~natty1'
       result[0][:candidate_version].should == '0.6.30-3ubuntu1~natty1'
+      result[0][:versions].length.should == 2
     end
   end
 end
