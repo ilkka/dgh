@@ -8,4 +8,8 @@ module Dgh
     @parser ||= PolicyParser.new
     @parser.parse input
   end
+
+  def run
+    ARGV.each {|f| File.exist?(f) && parse(File.open(f).read)}
+  end
 end
