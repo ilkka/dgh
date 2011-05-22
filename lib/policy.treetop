@@ -42,7 +42,7 @@ grammar Policy
   end
 
   rule apt_source
-    url section arch "Packages"
+    url " "+ section " "+ arch " "+ "Packages"
   end
 
   rule url
