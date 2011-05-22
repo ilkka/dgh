@@ -25,12 +25,18 @@ grammar Policy
 
   rule version_table
     "  Version table:\n"
-    (version_table_entry "\n")+
+    (
+      (current_mark / "     ") version " " [0-9]+ "\n"
+      (priority_entry "\n")+
+    )+
   end
 
-  rule version_table_entry
-    (" *** " / "     ") version " " [0-9]+ "\n"
-    " "+ priority (status_file / apt_source)
+  rule current_mark
+    " *** "
+  end
+
+  rule priority_entry
+    " "+ priority " "+ (status_file / apt_source)
   end
 
   rule priority
