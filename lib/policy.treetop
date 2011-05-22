@@ -24,7 +24,7 @@ grammar Policy
   end
 
   rule version
-    ([0-9] ":")? [a-z0-9_.~+-]+
+    ([0-9] ":")? [a-zA-Z0-9_.~+-]+
   end
 
   rule version_table
