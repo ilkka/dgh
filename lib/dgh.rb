@@ -1,5 +1,6 @@
 require 'treetop'
 require 'policy'
+require 'slop'
 
 module Dgh  
   extend self
@@ -26,9 +27,18 @@ module Dgh
 
   class << self
     def run
+      opts = Slop.parse do
+        banner "Usage: dgh [options] inputfile(s)"
+        on :v, :verbose, 'Be more verbose'
+        on :d, :debug, 'Output debug messages'
+        on :h, :help, 'Output help message', :tail => true do
+          puts help
+          exit
+        end
+      end
+
       if ARGV.empty? || ARGV.any? {|a| !File.exist? a}
-        puts "dgh, the Debian/Ubuntu Downgrade Helper"
-        puts "Usage: dgh <apt-cache policy listing>"
+        puts opts.help
         puts "You can generate a policy listing by running e.g."
         puts "`dpkg --get-selections|egrep '\\binstall'|awk '{print $1}'|\\"
         puts "  xargs env LANG=C apt-cache policy`"
