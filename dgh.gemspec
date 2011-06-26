@@ -32,7 +32,7 @@ a PPA that has since been removed from the system.
 
   s.add_runtime_dependency('treetop', [">= 0"])
 
-  s.add_development_dependency('rake', '~> 0.9.0')
+  s.add_development_dependency('rake', ["~> 0.9.0"])
   s.add_development_dependency('rspec', ["~> 2.6.0"])
   s.add_development_dependency('yard', ["~> 0.6.0"])
   s.add_development_dependency('cucumber', [">= 0"])
