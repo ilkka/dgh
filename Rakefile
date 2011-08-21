@@ -18,3 +18,6 @@ Cucumber::Rake::Task.new(:features)
 
 require 'yard'
 YARD::Rake::YardocTask.new
+
+task :default => [:features, :spec]
+
