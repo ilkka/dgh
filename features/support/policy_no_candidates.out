@@ -167,27 +167,3 @@ passwd:
  *** 1:4.1.4.2+svn3283-3ubuntu1 0
         500 http://fi.archive.ubuntu.com/ubuntu/ natty/main amd64 Packages
         100 /var/lib/dpkg/status
-git-flow:
-  Installed: 0.4.1-0ppa4~1.gbp9917bc
-  Candidate: 0.4.1-0ppa4~1.gbp9917bc
-  Version table:
- *** 0.4.1-0ppa4~1.gbp9917bc 0
-        100 /var/lib/dpkg/status
-     0.4.1-0ppa3 0
-        500 http://ppa.launchpad.net/ilkka/myppa/ubuntu/ natty/main amd64 Packages
-     0.4.1-0ppa2 0
-        500 http://ppa.launchpad.net/ilkka/snapshot/ubuntu/ natty/main amd64 Packages
-veracity:
-  Installed: 1.0.1nightly10535-natty1
-  Candidate: 1.0.1nightly10535-natty1
-  Version table:
- *** 1.0.1nightly10535-natty1 0
-        100 /var/lib/dpkg/status
-     1.0.0nightly10517-natty1 0
-        500 http://debian.sourcegear.com/ubuntu/ natty/main amd64 Packages
-picasa:
-  Installed: 3.0.5744-02
-  Candidate: 3.0.5744-02
-  Version table:
- *** 3.0.5744-02 0
-        100 /var/lib/dpkg/status
