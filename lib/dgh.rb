@@ -1,5 +1,8 @@
 require 'treetop'
 require 'policy'
+require 'slop'
+require 'logger'
+require 'log_buddy'
 
 module Dgh  
   extend self
@@ -26,17 +29,29 @@ module Dgh
 
   class << self
     def run
+      opts = Slop.parse do
+        banner "Usage: dgh [options] inputfile(s)"
+        on :d, :debug, 'Output debug messages'
+        on :h, :help, 'Output help message', :tail => true do
+          puts help
+          exit
+        end
+      end
+
+      log = Logger.new(STDOUT)
+      log.level = Logger::DEBUG
+      LogBuddy.init :default_loggger => log, :disabled => !opts[:debug]
+
       if ARGV.empty? || ARGV.any? {|a| !File.exist? a}
-        puts "dgh, the Debian/Ubuntu Downgrade Helper"
-        puts "Usage: dgh <apt-cache policy listing>"
+        puts opts.help
         puts "You can generate a policy listing by running e.g."
         puts "`dpkg --get-selections|egrep '\\binstall'|awk '{print $1}'|\\"
         puts "  xargs env LANG=C apt-cache policy`"
       else
         ARGV.each do |f|
-          puts "Parsing #{f}:"
+          d "Parsing #{f}"
           find_downgradable(parse(File.open(f).read).content).each do |pkg|
-            puts "  " + pkg[:name]
+            puts pkg[:name]
           end
         end
       end

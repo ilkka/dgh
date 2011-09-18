@@ -1,0 +1,8 @@
+TODO
+====
+
+* Invoke apt-cache directly
+* Prettier output
+* Print versions to downgrade to
+* Downgrade directly
+
