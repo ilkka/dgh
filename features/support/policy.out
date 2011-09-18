@@ -1,0 +1,193 @@
+firefox:
+  Installed: 7.0~b5+build1+nobinonly-0ubuntu0.11.04.1~mfn1
+  Candidate: 7.0~b5+build1+nobinonly-0ubuntu0.11.04.1~mfn1
+  Version table:
+ *** 7.0~b5+build1+nobinonly-0ubuntu0.11.04.1~mfn1 0
+        500 http://ppa.launchpad.net/mozillateam/firefox-next/ubuntu/ natty/main amd64 Packages
+        100 /var/lib/dpkg/status
+     6.0.2+build2+nobinonly-0ubuntu0.11.04.1 0
+        500 http://fi.archive.ubuntu.com/ubuntu/ natty-updates/main amd64 Packages
+        500 http://security.ubuntu.com/ubuntu/ natty-security/main amd64 Packages
+     4.0+nobinonly-0ubuntu3 0
+        500 http://fi.archive.ubuntu.com/ubuntu/ natty/main amd64 Packages
+dpkg:
+  Installed: 1.16.0~ubuntu7
+  Candidate: 1.16.0~ubuntu7
+  Version table:
+ *** 1.16.0~ubuntu7 0
+        500 http://fi.archive.ubuntu.com/ubuntu/ natty/main amd64 Packages
+        100 /var/lib/dpkg/status
+install-info:
+  Installed: 4.13a.dfsg.1-6ubuntu3
+  Candidate: 4.13a.dfsg.1-6ubuntu3
+  Version table:
+ *** 4.13a.dfsg.1-6ubuntu3 0
+        500 http://fi.archive.ubuntu.com/ubuntu/ natty/main amd64 Packages
+        100 /var/lib/dpkg/status
+libc6:
+  Installed: 2.13-0ubuntu13
+  Candidate: 2.13-0ubuntu13
+  Version table:
+ *** 2.13-0ubuntu13 0
+        500 http://fi.archive.ubuntu.com/ubuntu/ natty/main amd64 Packages
+        100 /var/lib/dpkg/status
+libacl1:
+  Installed: 2.2.49-4ubuntu2
+  Candidate: 2.2.49-4ubuntu2
+  Version table:
+ *** 2.2.49-4ubuntu2 0
+        500 http://fi.archive.ubuntu.com/ubuntu/ natty/main amd64 Packages
+        100 /var/lib/dpkg/status
+libattr1:
+  Installed: 1:2.4.44-2ubuntu3
+  Candidate: 1:2.4.44-2ubuntu3
+  Version table:
+ *** 1:2.4.44-2ubuntu3 0
+        500 http://fi.archive.ubuntu.com/ubuntu/ natty/main amd64 Packages
+        100 /var/lib/dpkg/status
+acpi-support:
+  Installed: 0.138
+  Candidate: 0.138
+  Version table:
+ *** 0.138 0
+        500 http://fi.archive.ubuntu.com/ubuntu/ natty/main amd64 Packages
+        100 /var/lib/dpkg/status
+x11-xserver-utils:
+  Installed: 7.6+2
+  Candidate: 7.6+2
+  Version table:
+ *** 7.6+2 0
+        500 http://fi.archive.ubuntu.com/ubuntu/ natty/main amd64 Packages
+        100 /var/lib/dpkg/status
+acpid:
+  Installed: 1:2.0.7-1ubuntu2
+  Candidate: 1:2.0.7-1ubuntu2
+  Version table:
+ *** 1:2.0.7-1ubuntu2 0
+        500 http://fi.archive.ubuntu.com/ubuntu/ natty/main amd64 Packages
+        100 /var/lib/dpkg/status
+hdparm:
+  Installed: 9.32-1ubuntu3
+  Candidate: 9.32-1ubuntu3
+  Version table:
+ *** 9.32-1ubuntu3 0
+        500 http://fi.archive.ubuntu.com/ubuntu/ natty/main amd64 Packages
+        100 /var/lib/dpkg/status
+lsb-base:
+  Installed: 4.0-0ubuntu11
+  Candidate: 4.0-0ubuntu11
+  Version table:
+ *** 4.0-0ubuntu11 0
+        500 http://fi.archive.ubuntu.com/ubuntu/ natty/main amd64 Packages
+        100 /var/lib/dpkg/status
+powermgmt-base:
+  Installed: 1.31
+  Candidate: 1.31
+  Version table:
+ *** 1.31 0
+        500 http://fi.archive.ubuntu.com/ubuntu/ natty/main amd64 Packages
+        100 /var/lib/dpkg/status
+laptop-detect:
+  Installed: 0.13.7ubuntu2
+  Candidate: 0.13.7ubuntu2
+  Version table:
+ *** 0.13.7ubuntu2 0
+        500 http://fi.archive.ubuntu.com/ubuntu/ natty/main amd64 Packages
+        100 /var/lib/dpkg/status
+dmidecode:
+  Installed: 2.9-1.2build1
+  Candidate: 2.9-1.2build1
+  Version table:
+ *** 2.9-1.2build1 0
+        500 http://fi.archive.ubuntu.com/ubuntu/ natty/main amd64 Packages
+        100 /var/lib/dpkg/status
+pm-utils:
+  Installed: 1.4.1-7
+  Candidate: 1.4.1-7
+  Version table:
+ *** 1.4.1-7 0
+        500 http://fi.archive.ubuntu.com/ubuntu/ natty/main amd64 Packages
+        100 /var/lib/dpkg/status
+toshset:
+  Installed: 1.75-2
+  Candidate: 1.75-2
+  Version table:
+ *** 1.75-2 0
+        500 http://fi.archive.ubuntu.com/ubuntu/ natty/main amd64 Packages
+        100 /var/lib/dpkg/status
+radeontool:
+  Installed: 1.6.1-1
+  Candidate: 1.6.1-1
+  Version table:
+ *** 1.6.1-1 0
+        500 http://fi.archive.ubuntu.com/ubuntu/ natty/main amd64 Packages
+        100 /var/lib/dpkg/status
+xinput:
+  Installed: 1.5.3-2ubuntu1
+  Candidate: 1.5.3-2ubuntu1
+  Version table:
+ *** 1.5.3-2ubuntu1 0
+        500 http://fi.archive.ubuntu.com/ubuntu/ natty/main amd64 Packages
+        100 /var/lib/dpkg/status
+wireless-tools:
+  Installed: 30~pre9-3ubuntu6
+  Candidate: 30~pre9-3ubuntu6
+  Version table:
+ *** 30~pre9-3ubuntu6 0
+        500 http://fi.archive.ubuntu.com/ubuntu/ natty/main amd64 Packages
+        100 /var/lib/dpkg/status
+module-init-tools:
+  Installed: 3.12-1ubuntu6
+  Candidate: 3.12-1ubuntu6
+  Version table:
+ *** 3.12-1ubuntu6 0
+        500 http://fi.archive.ubuntu.com/ubuntu/ natty/main amd64 Packages
+        100 /var/lib/dpkg/status
+adduser:
+  Installed: 3.112+nmu1ubuntu5
+  Candidate: 3.112+nmu1ubuntu5
+  Version table:
+ *** 3.112+nmu1ubuntu5 0
+        500 http://fi.archive.ubuntu.com/ubuntu/ natty/main amd64 Packages
+        100 /var/lib/dpkg/status
+perl-base:
+  Installed: 5.10.1-17ubuntu4.1
+  Candidate: 5.10.1-17ubuntu4.1
+  Version table:
+ *** 5.10.1-17ubuntu4.1 0
+        500 http://fi.archive.ubuntu.com/ubuntu/ natty-updates/main amd64 Packages
+        500 http://security.ubuntu.com/ubuntu/ natty-security/main amd64 Packages
+        100 /var/lib/dpkg/status
+     5.10.1-17ubuntu4 0
+        500 http://fi.archive.ubuntu.com/ubuntu/ natty/main amd64 Packages
+passwd:
+  Installed: 1:4.1.4.2+svn3283-3ubuntu1
+  Candidate: 1:4.1.4.2+svn3283-3ubuntu1
+  Version table:
+ *** 1:4.1.4.2+svn3283-3ubuntu1 0
+        500 http://fi.archive.ubuntu.com/ubuntu/ natty/main amd64 Packages
+        100 /var/lib/dpkg/status
+git-flow:
+  Installed: 0.4.1-0ppa4~1.gbp9917bc
+  Candidate: 0.4.1-0ppa4~1.gbp9917bc
+  Version table:
+ *** 0.4.1-0ppa4~1.gbp9917bc 0
+        100 /var/lib/dpkg/status
+     0.4.1-0ppa3 0
+        500 http://ppa.launchpad.net/ilkka/myppa/ubuntu/ natty/main amd64 Packages
+     0.4.1-0ppa2 0
+        500 http://ppa.launchpad.net/ilkka/snapshot/ubuntu/ natty/main amd64 Packages
+veracity:
+  Installed: 1.0.1nightly10535-natty1
+  Candidate: 1.0.1nightly10535-natty1
+  Version table:
+ *** 1.0.1nightly10535-natty1 0
+        100 /var/lib/dpkg/status
+     1.0.0nightly10517-natty1 0
+        500 http://debian.sourcegear.com/ubuntu/ natty/main amd64 Packages
+picasa:
+  Installed: 3.0.5744-02
+  Candidate: 3.0.5744-02
+  Version table:
+ *** 3.0.5744-02 0
+        100 /var/lib/dpkg/status
