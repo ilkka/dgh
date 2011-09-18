@@ -15,6 +15,6 @@ Given /^there are some downgradable packages$/ do
 end
 
 Then /^those packages should be reported as downgrade candidates$/ do
-  @output.should_match /git-flow\nveracity\npicasa/
+  @output.should match /git-flow\nveracity\npicasa/
 end
 
