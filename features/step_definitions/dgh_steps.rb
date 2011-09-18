@@ -7,5 +7,5 @@ When /^I run dgh$/ do
 end
 
 Then /^no packages should be reported as downgrade candidates$/ do
-  @output.length.should == 0
+  @output.should == ""
 end
