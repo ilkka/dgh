@@ -1,2 +1,0 @@
-rvm use --create --install 1.9.2@dgh
-bundle install
