@@ -30,17 +30,17 @@ a PPA that has since been removed from the system.
   ]
   s.require_paths = ["lib"]
 
-  s.add_runtime_dependency('treetop', [">= 0"])
-  s.add_runtime_dependency('slop', ["~> 1.9.1"])
+  s.add_runtime_dependency('treetop', ["~> 1.4.0 "])
+  s.add_runtime_dependency('slop', ["~> 2.3.0"])
   s.add_runtime_dependency('log_buddy', ["~> 0.6.0"])
 
   s.add_development_dependency('rake', ["~> 0.9.0"])
-  s.add_development_dependency('rspec', ["~> 2.6.0"])
-  s.add_development_dependency('yard', ["~> 0.6.0"])
-  s.add_development_dependency('cucumber', [">= 0"])
+  s.add_development_dependency('rspec', ["~> 2.7.0"])
+  s.add_development_dependency('yard', ["~> 0.7.0"])
+  s.add_development_dependency('cucumber', ["~> 1.1.0"])
   s.add_development_dependency('bundler', ["~> 1.0.13"])
   s.add_development_dependency('jeweler', ["~> 1.5.2"])
-  s.add_development_dependency('spork', [">= 0"])
-  s.add_development_dependency('watchr', [">= 0"])
+  s.add_development_dependency('spork', ["~> 0.8.5"])
+  s.add_development_dependency('watchr', ["~> 0.7"])
 end
 
