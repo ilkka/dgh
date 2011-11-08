@@ -39,7 +39,6 @@ a PPA that has since been removed from the system.
   s.add_development_dependency('yard', ["~> 0.7.0"])
   s.add_development_dependency('cucumber', ["~> 1.1.0"])
   s.add_development_dependency('bundler', ["~> 1.0.13"])
-  s.add_development_dependency('jeweler', ["~> 1.5.2"])
   s.add_development_dependency('spork', ["~> 0.8.5"])
   s.add_development_dependency('watchr', ["~> 0.7"])
 end
