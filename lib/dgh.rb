@@ -29,21 +29,26 @@ module Dgh
 
   class << self
     def run
-      opts = Slop.parse do
-        banner "Usage: dgh [options] inputfile(s)"
-        on :d, :debug, 'Output debug messages'
-        on :h, :help, 'Output help message', :tail => true do
-          puts help
-          exit
-        end
+      optspec = <<-SPEC
+Usage: dgh [options] inputfile(s)
+---
+d,debug Output debug messages
+h,help  Output help message
+      SPEC
+      opts = Slop.optspec(optspec)
+      opts.parse!
+
+      if opts.help?
+        puts opts
+        exit
       end
 
       log = Logger.new(STDOUT)
       log.level = Logger::DEBUG
-      LogBuddy.init :default_loggger => log, :disabled => !opts[:debug]
+      LogBuddy.init :default_loggger => log, :disabled => !opts.debug?
 
       if ARGV.empty? || ARGV.any? {|a| !File.exist? a}
-        puts opts.help
+        puts opts
         puts "You can generate a policy listing by running e.g."
         puts "`dpkg --get-selections|egrep '\\binstall'|awk '{print $1}'|\\"
         puts "  xargs env LANG=C apt-cache policy`"
