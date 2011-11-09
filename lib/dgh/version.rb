@@ -2,7 +2,7 @@ module Dgh
   module Version
     MAJOR = 0
     MINOR = 1
-    PATCH = 3
+    PATCH = 4
     BUILD = nil
   end
 
